@@ -1,0 +1,13 @@
+diff --git a/src/python/pants/jvm/resolve/coursier_setup.py b/src/python/pants/jvm/resolve/coursier_setup.py
+index 153fc3bae3..152415a6f3 100644
+--- a/src/python/pants/jvm/resolve/coursier_setup.py
++++ b/src/python/pants/jvm/resolve/coursier_setup.py
+@@ -81,7 +81,7 @@ COURSIER_FETCH_WRAPPER_SCRIPT = textwrap.dedent(  # noqa: PNT20
+     "$coursier_exe" fetch {repos_args} \
+         --json-output-file="$json_output_file" \
+         "${{@//{coursier_working_directory}/$working_dir}}"
+-    /bin/mkdir -p classpath
++    mkdir -p classpath
+     {python_path} {coursier_bin_dir}/coursier_post_processing_script.py "$json_output_file"
+     """
+ )
